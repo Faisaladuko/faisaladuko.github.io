@@ -108,6 +108,27 @@ nav {
 
 /* Mobile navigation */
 @media (max-width: 768px) {
+  body {
+    padding-top: 8rem;
+  }
+  
+  main {
+    margin-top: 2rem;
+  }
+  
+  header {
+    padding: 0.8rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 1000;
+    border-bottom: 1px solid #e8e8e8;
+    max-width: 100%;
+    margin: 0;
+  }
+  
   .nav-toggle {
     display: flex;
     position: absolute;
