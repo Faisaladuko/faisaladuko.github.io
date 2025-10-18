@@ -1,267 +1,102 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
-  <head><script src="assets/js/color-modes.js"></script>
-
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.115.4">
-    <title>Faisal Wahabu</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
-
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <style>
-      body {
-         margin: 0;
-      }
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-     
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <meta name="description" content="Faisal Wahabu - Research in Computer Vision, Indoor Navigation, and Machine Learning">
+    <meta name="author" content="Faisal Wahabu">
+    <meta name="keywords" content="Research, Computer Vision, Indoor Navigation, AR, Machine Learning, Academic Publications">
+    <title>Research - Faisal Wahabu</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3ccircle cx='50' cy='50' r='50' fill='%230066cc'/%3e%3ctext x='50' y='70' text-anchor='middle' fill='white' font-size='60' font-family='Arial, sans-serif' font-weight='bold'%3eF%3c/text%3e%3c/svg%3e">
   </head>
-  <body class="text-center text-bg-dark">
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="min-height: 100vh;">
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0">Faisal (Aduko) Wahabu</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="index.html">Home</a>
-        <a class="nav-link fw-bold py-1 px-0" href="portfolio.html">Portfolio</a>
-        <a class="nav-link fw-bold py-1 px-0 active" href="research.html">Research</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="py-md-5 py-3">
-    <h1>Research work</h1>
-    <div class="container">
-
-      <div class="card shadow-sm">
-        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Indoor Navigation with AR</text></svg>
-        <div class="card-body">
-          <p class="card-text">Combined Visual-Based Localization with Received Signal Strength Indicator 
-            for an Indoor Navigation Application. Explored Bayesian Filters for Sensor Fusion. Incorporated multiuser 
-            experience where an indoor space is scanned for its visual & RSSI landmarks, and this data is stored in 
-            Firebase and it’s retrievable for all other users within the same space for navigation.</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <a href="https://github.com/Faisaladuko/indoor-navigation">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-              </a>
-              <a href="http://hdl.handle.net/20.500.11988/683">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Paper</button>
-              </a>
-            </div>
-            <small class="text-body-secondary">May 2021</small>
-          </div>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="research.html" class="active">Research</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="docs/Faisal_Wahabu_cv.pdf" target="_blank">CV</a>
+        </div>
+      </nav>
+    </header>
 
-    </div>
-    
-  </main>
-  <br>
-  <div class="container-fluid">
-    <div class="row align-items-center">
-     <hr>
+    <main>
+      <section class="intro">
+        <h1>Research</h1>
+        <p>My research interests span <strong> Low Earth Orbit (LEO) satellites Precise Orbit Determination (POD)</strong>, and <strong>computational navigation systems</strong>. I specialize in developing algorithms for GNSS-based atmospheric sensing, automated satellite data processing, and intelligent positioning systems. My work bridges theoretical research with practical implementations, contributing to advances in navigation systems. Currently, I focus on solving real-world challenges in autonomous navigation, and machine learning applications.</p>
+      </section>
 
-     <div class="col-md-4">
-      <i class="bi bi-geo-alt"></i>
-      <address>Accra, Ghana</address>
-     </div>
+      <section class="research-content">
+        <div class="publication">
+          <h3 class="publication-title">An Algorithm for Estimating Thermospheric Density Using LEO Dual-Frequency GNSS Receivers: Design, Uncertainty Analysis, and Validation</h3>
+          <p class="publication-authors">Jian Yao, Stefan M. Codrescu, <strong>Faisal Wahabu</strong>, Mihail V. Codrescu, and Stephen Leroy</p>
+          <p class="publication-venue">38th International Technical Meeting of the Satellite Division of The Institute of Navigation (ION GNSS+ 2025)</p>
+          <p class="publication-description">Developed and validated a novel algorithm for estimating thermospheric density using dual-frequency GNSS receivers on Low Earth Orbit (LEO) satellites. The algorithm addresses challenges in satellite drag modeling by extracting along-track total acceleration from precise orbit determination, computing air-drag acceleration, and introducing separate drag coefficients for satellite main body and solar panels. Demonstrated successful validation using COSMIC-2 satellites with comparison against the Coupled Thermosphere Ionosphere Plasmasphere Electrodynamics (CTIPe) model during geomagnetic storm conditions in February 2022.</p>
+          <div class="publication-links">
+            <a href="https://www.researchgate.net/publication/396100768_An_Algorithm_for_Estimating_Thermospheric_Density_Using_LEO_Dual-Frequency_GNSS_Receivers_Design_Uncertainty_Analysis_and_Validation" target="_blank">View Publication</a>
+            <a href="https://doi.org/10.33012/2025.20349" target="_blank">DOI Link</a>
+          </div>
+          <div class="publication-date">September 2025</div>
+        </div>
 
-     <div class="col-md-4">
-      <i class="bi bi-envelope-at"></i>
-      <address>faisaladuko@gmail.com</address>
-     </div>
-      
-    
-     <div class="col-md-4">
-      <i class="bi bi-telephone"></i>
-      <address>+233 545968371</address>
-     </div>
-    </div>
-  </div>
-    <br>
-  <div class="container-fluid">
-    <div class="d-flex justify-content-center">
-    
-      <div>
-        <a href="https://github.com/Faisaladuko">
-          <i class="fab fa-github fa-2x" style="color: #333333;"></i>
-        </a>
-      </div>
+        <div class="publication">
+          <h3 class="publication-title">COSMIC-2 Thermospheric Density Processing Automation</h3>
+          <p class="publication-description">Developed an advanced automated processing system for COSMIC-2 satellite thermospheric density data. The system handles complex workflows including automated downloading of leoAtt (attitude) and podCrx (precise orbit) files from UCAR data repositories, intelligent file merging with temporal overlap handling, and RINEX format conversion with precise orbit determination. Implemented sophisticated epoch parsing algorithms, multi-satellite data synchronization, and integration with Bernese GNSS software for high-precision geodetic processing.</p>
+          <div class="tech-stack">
+            <strong>Technologies:</strong> Python, GNSS Data Processing, Satellite Geodesy, RINEX Format, Bernese Software, CRX2RNX, GFZRNX, Regex Pattern Matching, Temporal Data Synchronization, Modified Julian Date Conversion
+          </div>
+          <div class="publication-links">
+            <a href="#" target="_blank">Technical Documentation</a>
+            <a href="#" target="_blank">Processing Pipeline</a>
+          </div>
+          <div class="publication-date">July 2025</div>
+        </div>
 
-      <div style="margin:0% 5% 0% 5%;">
-        <a href="https://linkedin.com/in/faisalwahabu/">
-          <i class="fab fa-linkedin-in fa-2x" style="color: #0082ca;"></i>
-        </a>
-      </div>
+        <div class="publication">
+          <h3 class="publication-title">Indoor Navigation with AR using Visual-Based Localization and RSSI</h3>
+          <p class="publication-description">Combined Visual-Based Localization with Received Signal Strength Indicator for an Indoor Navigation Application. Explored Bayesian Filters for Sensor Fusion. Incorporated multiuser experience where an indoor space is scanned for its visual & RSSI landmarks, and this data is stored in Firebase and it's retrievable for all other users within the same space for navigation.</p>
+          <div class="publication-links">
+            <a href="https://github.com/Faisaladuko/indoor-navigation" target="_blank">View Project</a>
+            <a href="http://hdl.handle.net/20.500.11988/683" target="_blank">Read Paper</a>
+          </div>
+          <div class="publication-date">May 2021</div>
+        </div>
 
-      <div style="margin-right: 5%;">
-        <a href="https://x.com" >
-          <i class="fab fa-twitter fa-2x" style="color: #55acee;"></i>
-        </a>
-      </div>
-      <div>
-        <a href="https://whatsapp.com" >
-          <i class="fab fa-whatsapp fa-2x" style="color: #25d366;"></i>
-        </a>
-      </div>
-    
-      </div>
-    </div>
+        <div class="publication">
+          <h3 class="publication-title">Machine Learning Applications in Healthcare</h3>
+          <p class="publication-description">Developing predictive models for healthcare applications, including fetal health classification systems that achieve high accuracy in categorizing health conditions to support medical decision-making.</p>
+          <div class="publication-links">
+            <a href="https://github.com/Faisaladuko/fetal-data-classification" target="_blank">View Related Project</a>
+          </div>
+          <div class="publication-date">April 2021</div>
+        </div>
+      </section>
+    </main>
 
+    <script>
+      // Mobile menu toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
 
-  
-</div>
-<br>
-<br>
-<footer class="mt-auto text-white-50">
-  <p>@2023</p>
-</footer>
-<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/73d8759df1.js" crossorigin="anonymous"></script>
- <!--
-    - custom js link
-  -->
-  <script src="script.js"></script>
-    </body>
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu when clicking on a link
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
+  </body>
 </html>

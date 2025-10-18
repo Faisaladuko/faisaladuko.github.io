@@ -1,156 +1,133 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
-  <head><script src="assets/js/color-modes.js"></script>
-
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="description" content="Faisal Wahabu - Project Manager and Software Engineer">
+    <meta name="author" content="Faisal Wahabu">
+    <meta name="keywords" content="Faisal Wahabu, Machine Learning, MLOps, Project Manager, Software Engineer, AI Research">
     <title>Faisal Wahabu</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
-
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <style>
-      body {
-         margin: 0;
-      }
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-     
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3ccircle cx='50' cy='50' r='50' fill='%230066cc'/%3e%3ctext x='50' y='70' text-anchor='middle' fill='white' font-size='60' font-family='Arial, sans-serif' font-weight='bold'%3eF%3c/text%3e%3c/svg%3e">
   </head>
-
-  <body class="text-bg-dark d-flex flex-column justify-content-between">
-
-  <div class="cover-container container d-flex flex-column h-100 p-4 mx-auto">
-    <header class="mb-5">
-      <div class="d-flex justify-content-between align-items-center">
-        <h3 class="fw-bold mb-0">Faisal (Aduko) Wahabu</h3>
-        <nav class="nav nav-masthead justify-content-end">
-          <a class="nav-link fw-bold px-3 active" aria-current="page" href="index.html">Home</a>
-          <a class="nav-link fw-bold px-3" href="portfolio.html">Portfolio</a>
-          <a class="nav-link fw-bold px-3" href="research.html">Research</a>
-        </nav>
-      </div>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html" class="active">Home</a>
+          <a href="research.html">Research</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="docs/Faisal_Wahabu_cv.pdf" target="_blank">CV</a>
+        </div>
+      </nav>
     </header>
 
-    <main class="text-center py-4">
-      <h1 class="display-4 fw-bold mb-4">About Me</h1>
-      <p class="lead mx-auto" style="max-width: 700px;">
-        I’m a Project Manager and Software Engineer with deep expertise in Agile & Lean methodologies, Python, SQL, DevOps, and machine learning infrastructure (MLOps). I’m passionate about building data-driven solutions and advancing AI research.
-      </p>
-      <div class="mt-4">
-        <a href="docs/Faisal_Wahabu_cv.pdf" class="btn btn-lg btn-outline-light px-4">Download CV</a>
-      </div>
+    <main>
+      <section class="intro">
+        <div class="intro-content">
+          <div class="intro-left">
+            <div class="intro-photo">
+              <img src="docs/my-photo.jpg" alt="Faisal Wahabu" />
+            </div>
+            <div class="contact-social">
+              <div class="contact-info-inline">
+                <strong>✉</strong> faisal.wahabu@slu.edu<br>
+                <strong>☎</strong> +1 (314) 226-6751<br>
+                <strong>⌖</strong> Saint Louis Missouri
+              </div>
+              <div class="social-links-inline">
+                <a href="https://github.com/Faisaladuko" target="_blank">GitHub</a> •
+                <a href="https://www.linkedin.com/in/faisalwahabu/" target="_blank">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="intro-text">
+            <h1>Faisal (Aduko) Wahabu</h1>
+            <p>I am a researcher and engineer specializing in <strong>satellite geodesy</strong>, <strong>AI-driven navigation systems</strong>, and <strong>precision electronics verification</strong>. Currently pursuing advanced research at Saint Louis University, I bridge theoretical algorithms with practical implementations in GNSS processing, autonomous systems, and hardware-software co-design.</p>
+            
+            <p>With <strong>4 years of industry experience</strong>, I've worked as an <strong>Automation Engineer at Supra Oracles</strong> (blockchain L1 consensus protocols and multi-node network deployment) and <strong>Software Engineer at General Electric</strong> (Python backend systems, AI/LLM enhancement, and AWS cloud infrastructure).</p>
+            
+            <p>Currently working on cutting-edge projects including secure drone mesh networks with MANET/FANET protocols and microsecond-precision GPS timing devices. Explore my <a href="portfolio.html">portfolio</a> for technical implementations, <a href="research.html">research</a> for academic contributions, or download my <a href="docs/Faisal_Wahabu_cv.pdf">CV</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-news">
+        <h2>Latest News</h2>
+        
+        <div class="news-item">
+          <div class="news-date">October 2025</div>
+          <div class="news-content">
+            Currently developing a <strong>Secure Drone Mesh Network with Dynamic Routing</strong> - implementing MANET/FANET protocols for autonomous drone swarm communication. The system features multi-hop routing with Bellman-Ford algorithm, neighbor discovery via HELLO beacons, and real-time topology adaptation for mobility. Future enhancements include AES encryption and <a href="https://github.com/Faisaladuko/dronecom" target="_blank">CARLA simulator integration</a> for 3D visualization.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">October 2025</div>
+          <div class="news-content">
+            Designing an <strong>FPGA-Based GPS Timing Device with Microsecond Precision</strong> on Artix-7 FPGA using Vivado and VHDL. The hardware-software co-design features GPS-synchronized 1PPS signal processing, MicroBlaze soft processor for NMEA parsing, and microsecond-resolution pulse generation with holdover mode. Achieved sub-100 nanosecond synchronization accuracy and ~1 μs/s holdover drift performance for high-precision timing applications.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">September 2025</div>
+          <div class="news-content">
+            Published research paper <a href="https://www.researchgate.net/publication/396100768_An_Algorithm_for_Estimating_Thermospheric_Density_Using_LEO_Dual-Frequency_GNSS_Receivers_Design_Uncertainty_Analysis_and_Validation" target="_blank"><strong>"An Algorithm for Estimating Thermospheric Density Using LEO Dual-Frequency GNSS Receivers"</strong></a> at the 38th International Technical Meeting of the Satellite Division of The Institute of Navigation (ION GNSS+ 2025). Co-authored with researchers from Saint Louis University and Vector Space LLC.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">July 2025</div>
+          <div class="news-content">
+            Developed a comprehensive <strong>COSMIC-2 Satellite Data Processing System</strong> for automated thermospheric density analysis. The system handles complex GNSS data workflows, including multi-satellite constellation management, precise orbit determination, and integration with professional geodetic software. Features advanced temporal synchronization algorithms and robust automated data pipeline processing.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">February 2023</div>
+          <div class="news-content">
+            Developed <a href="https://github.com/Faisaladuko/tickets-classification/tree/main" target="_blank">Ticket Classification System</a> using K-MEAN Classification algorithm to improve Hyper Automation Support ticket routing.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">May 2021</div>
+          <div class="news-content">
+            Published research on <a href="http://hdl.handle.net/20.500.11988/683" target="_blank">"Indoor Navigation with AR using Visual-Based Localization and RSSI"</a>, exploring Bayesian Filters for Sensor Fusion and multiuser experience integration.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">April 2021</div>
+          <div class="news-content">
+            Completed <a href="https://github.com/Faisaladuko/fetal-data-classification" target="_blank">Fetal Health Classification</a> project achieving 99% accuracy using historical cardiotocograph data to categorize fetal health.
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="mt-5 pt-4 border-top border-secondary text-center">
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <i class="bi bi-geo-alt-fill"></i> Accra, Ghana
-        </div>
-        <div class="col-md-4 mb-3">
-          <i class="bi bi-envelope-at-fill"></i> faisaladuko@gmail.com
-        </div>
-        <div class="col-md-4 mb-3">
-          <i class="bi bi-telephone-fill"></i> +233 545968371
-        </div>
-      </div>
-      <div class="d-flex justify-content-center gap-4 mt-3">
-        <a href="https://github.com/Faisaladuko" target="_blank" class="text-light">
-          <i class="bi bi-github" style="font-size: 1.75rem;"></i>
-        </a>
-        <a href="https://linkedin.com/in/faisaladuko" target="_blank" class="text-light">
-          <i class="bi bi-linkedin" style="font-size: 1.75rem;"></i>
-        </a>
-        <!-- Add more icons here -->
-      </div>
-      <p class="mt-4 small text-muted">&copy; 2025 Faisal Wahabu. All rights reserved.</p>
-    </footer>
-  </div>
+    <script>
+      // Mobile menu toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
 
-
+      // Close menu when clicking on a link
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
+  </body>
 </html>
