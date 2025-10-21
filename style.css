@@ -729,3 +729,29 @@ main {
 html {
   scroll-behavior: smooth;
 }
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e8e8e8;
+  text-align: center;
+}
+
+.footer-links {
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #0066cc;
+  background-color: #f8f9fa;
+  text-decoration: none;
+}

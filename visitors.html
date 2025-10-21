@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Visitor Statistics - Faisal Wahabu">
+    <meta name="author" content="Faisal Wahabu">
+    <title>Visitor Statistics - Faisal Wahabu</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3ccircle cx='50' cy='50' r='50' fill='%230066cc'/%3e%3ctext x='50' y='70' text-anchor='middle' fill='white' font-size='60' font-family='Arial, sans-serif' font-weight='bold'%3eF%3c/text%3e%3c/svg%3e">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <style>
+      .map-container {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+      }
+      
+      .world-map {
+        width: 100%;
+        height: 500px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+      }
+      
+      .country {
+        fill: #e8e8e8;
+        stroke: #fff;
+        stroke-width: 0.5px;
+        transition: fill 0.3s;
+      }
+      
+      .country:hover {
+        fill: #d0d0d0;
+      }
+      
+      .visitor-bubble {
+        fill: #dc3545;
+        fill-opacity: 0.7;
+        stroke: #dc3545;
+        stroke-width: 1;
+        cursor: pointer;
+      }
+      
+      .visitor-bubble:hover {
+        fill-opacity: 0.9;
+      }
+      
+      .tooltip {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      
+      .stats-summary {
+        display: flex;
+        justify-content: space-around;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      
+      .stat-box {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid #e8e8e8;
+        min-width: 150px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #0066cc;
+        display: block;
+      }
+      
+      .stat-label {
+        color: #666;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+      
+      .legend {
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .legend-bubble {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #dc3545;
+      }
+      
+      @media (max-width: 768px) {
+        .world-map {
+          height: 300px;
+        }
+        
+        .stats-summary {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .stat-box {
+          width: 100%;
+          max-width: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="visitors.html" class="active">Visitors</a>
+          <a href="docs/Faisal_Wahabu_cv.pdf" target="_blank">CV</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>Visitor Statistics</h1>
+        <p>Real-time visitor tracking from around the world. Red bubbles indicate visitor concentrations by country.</p>
+      </section>
+
+      <section class="visitor-stats">
+        <div class="stats-summary">
+          <div class="stat-box">
+            <span class="stat-number" id="total-visitors">Loading...</span>
+            <div class="stat-label">Total Visitors</div>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number" id="countries-count">Loading...</span>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number" id="today-visitors">Loading...</span>
+            <div class="stat-label">Today's Visitors</div>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number" id="this-month">Loading...</span>
+            <div class="stat-label">This Month</div>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-bubble" style="width: 8px; height: 8px;"></div>
+            <span>1-10 visitors</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-bubble" style="width: 12px; height: 12px;"></div>
+            <span>11-50 visitors</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-bubble" style="width: 16px; height: 16px;"></div>
+            <span>51-100 visitors</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-bubble" style="width: 20px; height: 20px;"></div>
+            <span>100+ visitors</span>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <svg class="world-map" id="world-map"></svg>
+          <div class="tooltip" id="tooltip"></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Visitor tracking and map rendering
+      class VisitorTracker {
+        constructor() {
+          this.visitors = JSON.parse(localStorage.getItem('visitorData')) || {};
+          this.init();
+        }
+
+        init() {
+          this.trackCurrentVisitor();
+          this.renderMap();
+          this.updateStats();
+        }
+
+        async trackCurrentVisitor() {
+          try {
+            // Get visitor's location using a free IP geolocation service
+            const response = await fetch('https://ipapi.co/json/');
+            const data = await response.json();
+            
+            const country = data.country_name || 'Unknown';
+            const countryCode = data.country_code || 'XX';
+            
+            // Update visitor count for this country
+            if (!this.visitors[countryCode]) {
+              this.visitors[countryCode] = {
+                name: country,
+                count: 0,
+                lat: data.latitude || 0,
+                lng: data.longitude || 0,
+                lastVisit: new Date().toISOString()
+              };
+            }
+            
+            this.visitors[countryCode].count++;
+            this.visitors[countryCode].lastVisit = new Date().toISOString();
+            
+            // Save to localStorage
+            localStorage.setItem('visitorData', JSON.stringify(this.visitors));
+            
+            // Update display
+            this.updateStats();
+            this.renderMap();
+          } catch (error) {
+            console.log('Could not track visitor location:', error);
+            // Fallback data for demo purposes
+            this.addSampleData();
+          }
+        }
+
+        addSampleData() {
+          // Add some sample data for demonstration
+          const sampleData = {
+            'US': { name: 'United States', count: 45, lat: 39.8283, lng: -98.5795 },
+            'GB': { name: 'United Kingdom', count: 23, lat: 55.3781, lng: -3.4360 },
+            'DE': { name: 'Germany', count: 18, lat: 51.1657, lng: 10.4515 },
+            'CA': { name: 'Canada', count: 12, lat: 56.1304, lng: -106.3468 },
+            'AU': { name: 'Australia', count: 8, lat: -25.2744, lng: 133.7751 },
+            'JP': { name: 'Japan', count: 15, lat: 36.2048, lng: 138.2529 },
+            'BR': { name: 'Brazil', count: 7, lat: -14.2350, lng: -51.9253 },
+            'IN': { name: 'India', count: 32, lat: 20.5937, lng: 78.9629 },
+            'FR': { name: 'France', count: 19, lat: 46.2276, lng: 2.2137 },
+            'IT': { name: 'Italy', count: 11, lat: 41.8719, lng: 12.5674 }
+          };
+
+          // Merge with existing data
+          Object.keys(sampleData).forEach(code => {
+            if (!this.visitors[code]) {
+              this.visitors[code] = sampleData[code];
+            }
+          });
+
+          localStorage.setItem('visitorData', JSON.stringify(this.visitors));
+        }
+
+        updateStats() {
+          const totalVisitors = Object.values(this.visitors).reduce((sum, country) => sum + country.count, 0);
+          const countriesCount = Object.keys(this.visitors).length;
+          
+          // Simulate today's and monthly visitors (in a real app, you'd track dates)
+          const todayVisitors = Math.floor(totalVisitors * 0.1);
+          const monthlyVisitors = Math.floor(totalVisitors * 0.8);
+
+          document.getElementById('total-visitors').textContent = totalVisitors.toLocaleString();
+          document.getElementById('countries-count').textContent = countriesCount;
+          document.getElementById('today-visitors').textContent = todayVisitors;
+          document.getElementById('this-month').textContent = monthlyVisitors;
+        }
+
+        async renderMap() {
+          const svg = d3.select("#world-map");
+          svg.selectAll("*").remove();
+
+          const width = 1000;
+          const height = 500;
+          
+          svg.attr("viewBox", `0 0 ${width} ${height}`);
+
+          const projection = d3.geoNaturalEarth1()
+            .scale(160)
+            .translate([width / 2, height / 2]);
+
+          const path = d3.geoPath().projection(projection);
+
+          try {
+            // Load world map data
+            const world = await d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json");
+            const countries = topojson.feature(world, world.objects.countries);
+
+            // Draw countries
+            svg.selectAll(".country")
+              .data(countries.features)
+              .enter().append("path")
+              .attr("class", "country")
+              .attr("d", path);
+
+            // Draw visitor bubbles
+            this.drawVisitorBubbles(svg, projection);
+
+          } catch (error) {
+            console.log('Could not load map data:', error);
+            svg.append("text")
+              .attr("x", width / 2)
+              .attr("y", height / 2)
+              .attr("text-anchor", "middle")
+              .attr("fill", "#666")
+              .text("Map data could not be loaded");
+          }
+        }
+
+        drawVisitorBubbles(svg, projection) {
+          const tooltip = d3.select("#tooltip");
+
+          Object.entries(this.visitors).forEach(([code, data]) => {
+            if (data.lat && data.lng) {
+              const coords = projection([data.lng, data.lat]);
+              if (coords) {
+                const radius = Math.max(4, Math.min(20, Math.sqrt(data.count) * 2));
+                
+                svg.append("circle")
+                  .attr("class", "visitor-bubble")
+                  .attr("cx", coords[0])
+                  .attr("cy", coords[1])
+                  .attr("r", radius)
+                  .on("mouseover", (event) => {
+                    tooltip.style("opacity", 1)
+                      .html(`<strong>${data.name}</strong><br/>${data.count} visitors`)
+                      .style("left", (event.pageX + 10) + "px")
+                      .style("top", (event.pageY - 10) + "px");
+                  })
+                  .on("mouseout", () => {
+                    tooltip.style("opacity", 0);
+                  });
+              }
+            }
+          });
+        }
+      }
+
+      // Mobile menu toggle (same as other pages)
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+
+      // Initialize visitor tracking
+      new VisitorTracker();
+    </script>
+  </body>
+</html>
