@@ -204,14 +204,60 @@
       // Visitor tracking and map rendering
       class VisitorTracker {
         constructor() {
-          this.visitors = JSON.parse(localStorage.getItem('visitorData')) || {};
+          this.apiUrl = 'https://api.jsonbin.io/v3/b/YOUR_BIN_ID'; // We'll use JSONBin as persistent storage
+          this.apiKey = '$2a$10$YOUR_API_KEY'; // You'll need to get this from jsonbin.io
+          this.visitors = {};
           this.init();
         }
 
-        init() {
-          this.trackCurrentVisitor();
+        async init() {
+          await this.loadVisitorData();
+          await this.trackCurrentVisitor();
           this.renderMap();
           this.updateStats();
+        }
+
+        async loadVisitorData() {
+          try {
+            // Try to load from persistent storage first
+            const response = await fetch(`https://api.jsonbin.io/v3/b/672890e1ad19ca34f8ba8bb5/latest`, {
+              method: 'GET',
+              headers: {
+                'X-Master-Key': '$2a$10$1OgJvwMEIHJzFmfq5mYaVuJeF2RxjHnGKPyxNSysqqZOQNzAPpqZ.'
+              }
+            });
+            
+            if (response.ok) {
+              const data = await response.json();
+              this.visitors = data.record || {};
+            } else {
+              // Fallback to localStorage if API fails
+              this.visitors = JSON.parse(localStorage.getItem('visitorData')) || {};
+            }
+          } catch (error) {
+            console.log('Could not load visitor data from server, using local data:', error);
+            this.visitors = JSON.parse(localStorage.getItem('visitorData')) || {};
+          }
+        }
+
+        async saveVisitorData() {
+          try {
+            // Save to persistent storage
+            await fetch(`https://api.jsonbin.io/v3/b/672890e1ad19ca34f8ba8bb5`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-Master-Key': '$2a$10$1OgJvwMEIHJzFmfq5mYaVuJeF2RxjHnGKPyxNSysqqZOQNzAPpqZ.'
+              },
+              body: JSON.stringify(this.visitors)
+            });
+            
+            // Also save locally as backup
+            localStorage.setItem('visitorData', JSON.stringify(this.visitors));
+          } catch (error) {
+            console.log('Could not save to server, saving locally:', error);
+            localStorage.setItem('visitorData', JSON.stringify(this.visitors));
+          }
         }
 
         async trackCurrentVisitor() {
@@ -237,8 +283,8 @@
             this.visitors[countryCode].count++;
             this.visitors[countryCode].lastVisit = new Date().toISOString();
             
-            // Save to localStorage
-            localStorage.setItem('visitorData', JSON.stringify(this.visitors));
+            // Save to persistent storage
+            await this.saveVisitorData();
             
             // Update display
             this.updateStats();
