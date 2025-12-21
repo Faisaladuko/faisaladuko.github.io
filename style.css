@@ -239,18 +239,49 @@ a:focus {
 }
 
 .intro-text h1 {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   text-align: left;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
 }
 
 .intro-text p {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1.8;
   color: #444;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  margin-bottom: 1.25rem;
+}
+
+.intro-text p:first-of-type {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.intro-text p:last-of-type {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e8e8e8;
+  font-size: 1rem;
+  color: #555;
+}
+
+.intro-text a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.intro-text a:hover {
+  color: #004499;
+  border-bottom-color: #004499;
 }
 
 .intro-photo {
@@ -511,6 +542,61 @@ a:focus {
   margin-bottom: 3rem;
 }
 
+.latest-news h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.news-list {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+.news-list li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  gap: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-list li:hover {
+  padding-left: 1rem;
+  border-left: 3px solid #0066cc;
+}
+
+.news-date {
+  font-weight: 600;
+  color: #0066cc;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.news-text {
+  color: #555;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.news-text strong {
+  color: #333;
+  font-weight: 600;
+}
+
 .news-item {
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
@@ -526,15 +612,6 @@ a:focus {
 .news-item:hover {
   padding-left: 1rem;
   border-left: 3px solid #0066cc;
-}
-
-.news-date {
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .news-content {
