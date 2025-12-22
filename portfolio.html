@@ -33,77 +33,221 @@
       </section>
 
       <section class="portfolio-content">
-        <div class="project">
-          <h3 class="project-title">COSMIC-2 Satellite Data Processing System</h3>
-          <p class="project-description">Engineered a comprehensive automated processing pipeline for COSMIC-2 constellation thermospheric density data. The system orchestrates complex workflows including multi-day data collection with temporal overlap handling, format conversion from COSMIC CRX to RINEX, precise time synchronization across multiple satellites, and integration with professional geodetic software. Features intelligent epoch parsing, satellite constellation management, and robust error handling for operational reliability.</p>
-          <div class="tech-stack">
-            <strong>Technologies:</strong> Python, GNSS Processing, Satellite Geodesy, RINEX Format, Data Pipeline Automation, Temporal Algorithms, Bernese Software Integration
+        <!-- Featured Current Projects -->
+        <div class="project-card">
+          <div class="project-visual">
+            <span class="project-icon">🔧</span>
           </div>
-          <div class="project-links">
-            <a href="#" target="_blank">View Documentation</a>
+          <div class="project-body">
+            <h3>AI Chat Exporter - Chrome Extension</h3>
+            <p class="project-summary">
+              Privacy-focused browser extension for exporting AI conversations from ChatGPT, Gemini, Grok, and DeepSeek with formatting preserved.
+            </p>
+            <ul class="project-highlights">
+              <li>Selective export to Word (.docx) or PDF with code highlighting and LaTeX math preservation</li>
+              <li>100% offline processing - no telemetry, tracking, or external API calls</li>
+              <li>Multi-platform support with intelligent DOM parsing and platform detection</li>
+              <li>Published on Chrome Web Store with modular ES6 architecture and Manifest V3</li>
+            </ul>
+            <div class="project-diagram">
+              Platform Detection → Message Parsing → Format Preservation → Local Export (DOCX/PDF)
+            </div>
+            <div class="project-meta">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Chrome Extension</span>
+              <span class="tag">Manifest V3</span>
+              <span class="tag">Privacy-First</span>
+              <span class="tag">Open Source</span>
+              <span class="date">Dec 2025</span>
+            </div>
+            <div class="project-links">
+              <a href="https://chromewebstore.google.com/detail/ikhjggcaejkghjgaibknlcagdehmnpbn" target="_blank" class="project-link">Chrome Web Store →</a>
+              <a href="https://github.com/Faisaladuko/AI-Chat-Exporter" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
           </div>
-          <div class="project-date">July 2025</div>
         </div>
 
-        <div class="project">
-          <h3 class="project-title">FPGA-Based GPS Timing Device with Microsecond Precision 🚧 Work in Progress</h3>
-          <p class="project-description">Designed and implemented a hardware-software co-design on an Artix-7 FPGA using Vivado and VHDL to create a precision timing device synchronized to a GPS-derived 1PPS signal. The system generates a 1 MHz microsecond pulse output (1PPuS) and serial messages containing UNIX timestamps with certainty metrics, maintaining operation during GPS signal loss through holdover mode. Developed VHDL modules for precise PPS edge detection, microsecond-resolution timekeeping, and pulse generation, while integrating MicroBlaze soft processor for NMEA data parsing and timestamp synchronization. Achieved sub-100 nanosecond PPS synchronization accuracy with ~1 μs/s holdover drift performance.</p>
-          <div class="tech-stack">
-            <strong>Technologies:</strong> FPGA Design, VHDL, Vivado, MicroBlaze, C Programming, AXI Protocol, UART Communication, GPS u-blox M8, Real-time Systems, Hardware-Software Co-design
+        <div class="project-card">
+          <div class="project-visual">
+            <span class="project-icon">🛰️</span>
           </div>
-          <div class="project-links">
-            <a href="#" target="_blank">View Documentation</a>
+          <div class="project-body">
+            <h3>COSMIC-2 Satellite Data Processing System</h3>
+            <p class="project-summary">
+              Automated GNSS data processing pipeline for thermospheric density estimation using LEO satellite observations.
+            </p>
+            <ul class="project-highlights">
+              <li>Multi-satellite constellation and epoch management with temporal overlap handling</li>
+              <li>CRX → RINEX conversion with precise time synchronization across satellites</li>
+              <li>Integrated Bernese GNSS software for precise orbit determination</li>
+              <li>Robust error handling and operational reliability for large-scale data pipelines</li>
+            </ul>
+            <div class="project-diagram">
+              LEO Satellites → GNSS Observations → RINEX → Bernese → Density Estimation
+            </div>
+            <div class="project-meta">
+              <span class="tag">GNSS</span>
+              <span class="tag">Satellite Geodesy</span>
+              <span class="tag">Python</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Data Pipeline</span>
+              <span class="date">Jul 2025</span>
+            </div>
+            <div class="project-links">
+              <a href="https://sites.google.com/view/slu-pnt/data" class="project-link">View Documentation →</a>
+              <!-- Placeholder: Add link to documentation or demo -->
+            </div>
           </div>
-          <div class="project-date">October 2025 (In Progress)</div>
         </div>
 
-        <div class="project">
-          <h3 class="project-title">Secure Drone Mesh Network with Dynamic Routing 🚧 Work in Progress</h3>
-          <p class="project-description">Developing a robust drone mesh communication network where autonomous drones establish multi-hop routing paths and maintain secure communication despite mobility and link breaks. Implementing Mobile Ad Hoc Networks (MANETs) and Flying Ad Hoc Networks (FANETs) protocols using Python's asyncio for distributed, infrastructure-less communication. Features include neighbor discovery via HELLO beacons, distance-vector routing with Bellman-Ford algorithm, waypoint-based mobility simulation, and real-time topology adaptation. Future enhancements include AES/ChaCha20 encryption and integration with CARLA simulator for 3D visualization.</p>
-          <div class="tech-stack">
-            <strong>Technologies:</strong> Python, Asyncio, MANET/FANET Protocols, Distance-Vector Routing, Wireless Mesh Networks, Bellman-Ford Algorithm, Network Simulation, Cryptography, CARLA Simulator
+        <div class="project-card">
+          <div class="project-visual">
+            <span class="project-icon">⏱️</span>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/Faisaladuko/dronecom" target="_blank">View Project</a>
+          <div class="project-body">
+            <h3>FPGA-Based GPS Timing Device with Microsecond Precision</h3>
+            <span class="wip-badge">🚧 Work in Progress</span>
+            <p class="project-summary">
+              FPGA-based GPS-disciplined timing system with sub-100 ns synchronization accuracy and holdover support.
+            </p>
+            <ul class="project-highlights">
+              <li>GPS 1PPS edge capture and microsecond-resolution timekeeping using VHDL</li>
+              <li>MicroBlaze soft processor for NMEA parsing and timestamp alignment</li>
+              <li>Holdover mode achieving ~1 μs/s drift during GPS signal loss</li>
+              <li>AXI protocol integration and UART communication for real-time timestamp delivery</li>
+            </ul>
+            <div class="project-diagram">
+              GPS 1PPS → FPGA PPS Capture → µs Counter → MicroBlaze Sync → UART Output
+            </div>
+            <div class="project-meta">
+              <span class="tag">FPGA</span>
+              <span class="tag">VHDL</span>
+              <span class="tag">Vivado</span>
+              <span class="tag">PNT</span>
+              <span class="tag">Timing & Synchronization</span>
+              <span class="tag">Hardware-Software Co-design</span>
+              <span class="date">Oct 2025</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Faisaladuko/GPS-Time-Synchronizer-with-Fpga" class="project-link">View Documentation →</a>
+              <!-- Placeholder: Add link to project repo or documentation -->
+            </div>
           </div>
-          <div class="project-date">October 2025 (In Progress)</div>
         </div>
 
-        <div class="project">
-          <h3 class="project-title">Ticket Classification System</h3>
-          <p class="project-description">Addresses a real-life challenge of Hyper Automation Support tickets, allowing the appropriate team to track down issues and resolve them efficiently. Used the K-MEAN Classification algorithm to cluster tickets into different categories.</p>
-          <div class="tech-stack">
-            <strong>Technologies:</strong> Python, Scikit-Learn, Pandas, K-Means Clustering, Feature Extraction
+        <div class="project-card">
+          <div class="project-visual">
+            <span class="project-icon">🛸</span>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/Faisaladuko/tickets-classification/tree/main" target="_blank">View Project</a>
+          <div class="project-body">
+            <h3>Secure Drone Mesh Network with Dynamic Routing</h3>
+            <p class="project-summary">
+              Robust drone mesh communication network with multi-hop routing and real-time topology adaptation for autonomous swarm systems.
+            </p>
+            <ul class="project-highlights">
+              <li>MANET/FANET protocols using Python asyncio for distributed, infrastructure-less communication</li>
+              <li>Distance-vector routing with Bellman-Ford algorithm for dynamic path optimization</li>
+              <li>Neighbor discovery via HELLO beacons with waypoint-based mobility simulation</li>
+              <li>Future: AES/ChaCha20 encryption and CARLA simulator integration for 3D visualization</li>
+            </ul>
+            <div class="project-diagram">
+              Drone Network → Neighbor Discovery → Distance-Vector Routing → Multi-hop Communication
+            </div>
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="tag">Asyncio</span>
+              <span class="tag">MANET/FANET</span>
+              <span class="tag">Wireless Mesh</span>
+              <span class="tag">Network Simulation</span>
+              <span class="date">Oct 2025</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Faisaladuko/drone-mesh-network" target="_blank" class="project-link">View Project →</a>
+            </div>
           </div>
-          <div class="project-date">February 2023</div>
         </div>
 
-        <div class="project">
-          <h3 class="project-title">Indoor Navigation with Augmented Reality</h3>
-          <p class="project-description">Combined Visual-Based Localization with Received Signal Strength Indicator for an Indoor Navigation Application. Explored Bayesian Filters for Sensor Fusion and incorporated multiuser experience with cloud-based landmark storage.</p>
-          <div class="tech-stack">
-            <strong>Technologies:</strong> Unity, ARCore, Firebase, Computer Vision, Bayesian Filters, RSSI
+        <!-- Earlier Projects -->
+        <div class="project-card legacy">
+          <div class="project-visual">
           </div>
-          <div class="project-links">
-            <a href="https://github.com/Faisaladuko/indoor-navigation" target="_blank">View Project</a>
-            <a href="http://hdl.handle.net/20.500.11988/683" target="_blank">Research Paper</a>
+          <div class="project-body">
+            <h3>Ticket Classification System</h3>
+            <p class="project-summary">
+              Automated support ticket categorization system using K-Means clustering for efficient team routing and issue resolution.
+            </p>
+            <ul class="project-highlights">
+              <li>K-Means classification algorithm for multi-category ticket clustering</li>
+              <li>Feature extraction and text processing for automation support tickets</li>
+              <li>Improved team efficiency in tracking and resolving hyperautomation issues</li>
+            </ul>
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="tag">Scikit-Learn</span>
+              <span class="tag">K-Means</span>
+              <span class="tag">NLP</span>
+              <span class="date">Feb 2023</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Faisaladuko/tickets-classification/tree/main" target="_blank" class="project-link">View Project →</a>
+            </div>
           </div>
-          <div class="project-date">May 2021</div>
         </div>
 
-        <div class="project">
-          <h3 class="project-title">Fetal Health Classification</h3>
-          <p class="project-description">Machine learning model designed to reduce child and maternal mortality rates by categorizing fetal health into suspect, normal, and pathological categories with 99% accuracy using historical cardiotocograph data.</p>
-          <div class="tech-stack">
-            <strong>Technologies:</strong> Python, Scikit-Learn, Machine Learning, Medical Data Analysis
+        <div class="project-card legacy">
+          <div class="project-visual">
+            <span class="project-icon">📱</span>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/Faisaladuko/fetal-data-classification" target="_blank">View Project</a>
+          <div class="project-body">
+            <h3>Indoor Navigation with Augmented Reality</h3>
+            <p class="project-summary">
+              AR-based indoor navigation system combining visual localization with WiFi RSSI for accurate positioning and multi-user experience.
+            </p>
+            <ul class="project-highlights">
+              <li>Visual-based localization fused with RSSI using Bayesian filters for sensor fusion</li>
+              <li>ARCore integration with cloud-based landmark storage via Firebase</li>
+              <li>Multi-user experience with shared spatial anchors and navigation paths</li>
+            </ul>
+            <div class="project-meta">
+              <span class="tag">Unity</span>
+              <span class="tag">ARCore</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Bayesian Filters</span>
+              <span class="tag">Firebase</span>
+              <span class="date">May 2021</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Faisaladuko/indoor-navigation" target="_blank" class="project-link">View Project →</a>
+              <a href="http://hdl.handle.net/20.500.11988/683" target="_blank" class="project-link">Research Paper →</a>
+            </div>
           </div>
-          <div class="project-date">April 2021</div>
+        </div>
+
+        <div class="project-card legacy">
+          <div class="project-visual">
+            <span class="project-icon">🏥</span>
+          </div>
+          <div class="project-body">
+            <h3>Fetal Health Classification</h3>
+            <p class="project-summary">
+              Machine learning model for fetal health categorization achieving 99% accuracy using cardiotocograph data analysis.
+            </p>
+            <ul class="project-highlights">
+              <li>Classification into suspect, normal, and pathological categories</li>
+              <li>Historical cardiotocograph data processing and feature engineering</li>
+              <li>High-accuracy model for reducing child and maternal mortality risk assessment</li>
+            </ul>
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="tag">Scikit-Learn</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Medical Data</span>
+              <span class="date">Apr 2021</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Faisaladuko/fetal-data-classification" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
